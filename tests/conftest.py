@@ -1,10 +1,12 @@
 from collections.abc import AsyncIterator
+
 import pytest
 from httpx import ASGITransport, AsyncClient
 
 from arbiter.db import engine
-from arbiter.redis import redis_client
 from arbiter.main import app
+from arbiter.redis import redis_client
+
 
 @pytest.fixture
 async def client() -> AsyncIterator[AsyncClient]:
